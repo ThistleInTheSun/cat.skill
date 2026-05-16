@@ -5,13 +5,14 @@ description: 引导用户在本仓库中创建一个新的 skill，遵循 cat-**
 
 # cat-create-skill
 
-在 `cat.skill` 仓库中创建一个新的 skill。
+在 `cat-skill` 仓库中创建一个新的 skill。
 
 不审阅已有 skill，不检测多个 skill 的功能重叠；这些场景分别交给 `cat-review-skill` 和 `cat-overlap-skills`。
 
 ## 仓库约定
 
-- 顶层目录是**工作大类**，命名为 `cat-**`（例如 `cat-write` 写作类、`cat-skill` skill 元工作类）
+- 仓库根目录下的一级目录是**工作大类**，命名为 `cat-**`（例如与 `cat-skill` 同级的 `cat-write` 写作类）
+- 大类必须与 `cat-skill`、`cat-write` 处于同一层级；不要在 `cat-skill/` 内创建新的大类目录
 - 每个具体 skill 是大类下的子目录，目录内必须包含 `SKILL.md`
 - `SKILL.md` 顶部使用 YAML frontmatter，字段：
   - `name`：小写字母/数字/连字符，最长 64 字符
@@ -33,7 +34,7 @@ description: 引导用户在本仓库中创建一个新的 skill，遵循 cat-**
 
 ### Step 1 — 确认大类
 
-询问用户该 skill 属于哪个大类，或基于上下文推断。若不存在则新建一个 `cat-**` 顶层目录。
+询问用户该 skill 属于哪个大类，或基于上下文推断。若不存在，则在仓库根目录新建一个与 `cat-skill`、`cat-write` 同级的 `cat-**` 大类目录。
 
 ### Step 2 — 命名
 
@@ -62,6 +63,8 @@ description: 引导用户在本仓库中创建一个新的 skill，遵循 cat-**
 <category>/<skill-name>/
 └── SKILL.md
 ```
+
+其中 `<category>` 是仓库根目录下与 `cat-skill`、`cat-write` 同级的大类目录，`<skill-name>` 是放在该大类下面的具体 skill 文件夹。
 
 按需扩展（progressive disclosure）：
 
@@ -110,5 +113,6 @@ description: 引导用户在本仓库中创建一个新的 skill，遵循 cat-**
 
 避免：
 - 在 `cat-skill/` 下创建非 `cat-` 前缀的大类目录
+- 在 `cat-skill/` 下创建 `cat-think/`、`cat-write/` 这类本应位于仓库根目录的大类
 - 把多个无关 skill 塞进同一个目录
 - 在 SKILL.md 里堆砌 agent 已知的常识
