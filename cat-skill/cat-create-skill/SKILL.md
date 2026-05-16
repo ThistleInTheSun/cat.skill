@@ -7,6 +7,8 @@ description: 引导用户在本仓库中创建一个新的 skill，遵循 cat-**
 
 在 `cat.skill` 仓库中创建一个新的 skill。
 
+不审阅已有 skill，不检测多个 skill 的功能重叠；这些场景分别交给 `cat-review-skill` 和 `cat-overlap-skills`。
+
 ## 仓库约定
 
 - 顶层目录是**工作大类**，命名为 `cat-**`（例如 `cat-write` 写作类、`cat-skill` skill 元工作类）
@@ -86,7 +88,7 @@ description: 引导用户在本仓库中创建一个新的 skill，遵循 cat-**
 - [ ] SKILL.md 主体 < 500 行
 - [ ] description 第三人称且含触发词
 - [ ] 引用文件仅一级深度（不嵌套 `a.md` → `b.md` → `c.md`）
-- [ ] 无 Windows 风格路径（用 `/` 而非 `\`）
+- [ ] 无 Windows 风格路径（路径分隔符使用正斜杠）
 - [ ] 无时间敏感措辞（"截至 2025 年..."）
 
 ### Step 7 — 合规检查
@@ -94,6 +96,15 @@ description: 引导用户在本仓库中创建一个新的 skill，遵循 cat-**
 完成后调用 `cat-skill/cat-review-skill` 对新 skill 做一次合规检查（PASS/FAIL），按报告修复所有 FAIL 项后再次检查，直至全部 PASS。
 
 注意：review 只看"是否合规"，不评估能力质量；能力优化等未来的迭代 skill 上线后再做。
+
+## 验证本 skill 是否起效
+
+执行后产物应满足：
+
+- 新 skill 目录和 `SKILL.md` 已按目标大类创建
+- frontmatter 包含合规的 `name` 与 `description`
+- 主体包含清晰的输入、工作流、输出或验证标准
+- 经 `cat-review-skill` 检查后无 FAIL 项
 
 ## 反例
 

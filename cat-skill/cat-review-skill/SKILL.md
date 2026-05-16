@@ -1,26 +1,17 @@
 ---
 name: cat-review-skill
-description: 对本仓库中**单个** skill 做基础合规检查（compliance check），核对 frontmatter、主体规范、设计合规、结构规范与仓库约定五组硬规则，对每项做 PASS/FAIL 二元判定，并输出合规判定 + 最小修改建议**报告**。类比算法落地中的"部署后功能正确性自检"，只判断"是否符合规则"，不评估"能力是否优秀"。当用户提出"审阅这个 skill / review skill / 检查 skill 合规 / skill 合规检查"等针对单个 skill 的合规审阅意图时使用。**只产出报告，不修改任何文件**。若要在多个 skill 间查重叠改用 cat-overlap-skills；若要提升 skill 能力（精简措辞、丰富示例、增强可组合性、优化决策路径等），交给未来的迭代 skill，本 skill 不做。
+description: 对本仓库中单个 skill 做基础合规检查，核对 frontmatter、主体规范、设计合规、结构规范与仓库约定，并输出 PASS/FAIL 报告和最小修改建议。当用户要求审阅单个 skill、检查 skill 合规性或 review skill 时使用。只检查规则合规性，不评估能力质量，不修改文件。
 ---
 
 # cat-review-skill
 
-对 `cat.skill` 仓库中某个已有 skill 做一次**基础合规检查**，输出**合规判定 + 最小修改建议报告**。
+对 `cat-skill` 仓库中某个已有 skill 做一次**基础合规检查**，输出**合规判定 + 最小修改建议报告**。
 
 ## 定位
 
-类比算法落地：
+只核对硬规则清单，每项做 PASS/FAIL 二元判定，并给出最小修改建议。
 
-- 本 skill = **部署后功能正确性自检**：检查 skill 是否符合规则、能否被正确发现与调用
-- 未来的迭代 skill = **算法能力迭代**：在合规基础上让 skill 更聪明、更精炼、更具组合性
-
-**边界**：
-
-- ✅ 做：核对硬规则清单，每项 PASS/FAIL 二元判定，给出最小修改建议
-- ❌ 不做：不评估"能力是否优秀"（如示例够不够丰富、措辞够不够精炼、可组合性强不强）
-- ❌ 不做：不修改文件、不调用其他 skill
-
-落地由用户决定是否采纳，或交给 `cat-create-skill` 执行写入。
+不评估能力质量，不修改文件，不调用其他 skill；落地由用户决定是否采纳，或交给 `cat-create-skill` 执行写入。
 
 ## 输入
 
@@ -56,7 +47,7 @@ Frontmatter
 - [ ] 工作流有编号步骤
 
 仓库约定
-- [ ] 位于某个 cat-** 大类目录之下
+- [ ] 位于某个 `cat-*` 顶层大类目录之下
 - [ ] 子目录名 lowercase + hyphens
 ```
 
@@ -69,10 +60,10 @@ Frontmatter
 <合规 / 不合规>（FAIL 项数：N）
 
 ## 不合规项（必须修复）
-- 🔴 [<分组>.<项名>]: <证据片段或行号> → <最小修改建议>
+- FAIL [<分组>.<项名>]: <证据片段或行号> -> <最小修改建议>
 
 ## 边缘情况（处于规则边缘，提示但不算 FAIL）
-- 🟡 [<分组>.<项名>]: <现象> → <提示>
+- WARN [<分组>.<项名>]: <现象> -> <提示>
 
 ## 修改 diff 建议
 <针对最关键的 1–3 处给出可直接套用的替换片段>
@@ -112,12 +103,12 @@ Frontmatter
 
 ## 反例（合规层面的 FAIL）
 
-- description 第一人称（"I will help..."）→ 🔴
-- description 缺少 WHAT 或 WHEN → 🔴
-- description 只讲"做什么"不讲"不做什么" → 🔴
-- 名字叫 helper / utils / tool → 🔴
-- 未定义任何产物形态（无模板/无骨架/无字段清单）→ 🔴
-- 未给出"如何判断 skill 起效"的判断点 → 🔴
-- 路径用 Windows 风格 `\` → 🔴
-- name 与所在目录名不一致 → 🔴
-- 包含 "截至 2024 年..." 类时间锚 → 🔴
+- description 第一人称（"I will help..."）-> FAIL
+- description 缺少 WHAT 或 WHEN -> FAIL
+- description 只讲"做什么"不讲"不做什么" -> FAIL
+- 名字叫 helper / utils / tool -> FAIL
+- 未定义任何产物形态（无模板/无骨架/无字段清单）-> FAIL
+- 未给出"如何判断 skill 起效"的判断点 -> FAIL
+- 路径用 Windows 风格 `\` -> FAIL
+- name 与所在目录名不一致 -> FAIL
+- 包含 "截至 2024 年..." 类时间锚 -> FAIL
