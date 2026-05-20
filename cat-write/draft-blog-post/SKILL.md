@@ -1,11 +1,11 @@
 ---
 name: draft-blog-post
-description: 在 `cat-write/drafts/` 下生成一篇公众号/博客文章的粗稿（first draft），必须基于用户给出的 thesis（核心观点）与 bones（论证骨架 3-5 条），严格按 `cat-write/_assets/voice-profile-blog.md` 的声音规范输出 800-1500 字的 Markdown 草稿。当用户说"帮我写一篇公众号草稿 / 起一稿博客 / draft 一篇 / 出个第一稿 / 帮我写个初稿"等意图时使用。**只产出粗稿，不修改既有文章、不做段落分诊、不做发布检查、不做声音迁移**；不接受没有 thesis 或 bones（少于 3 条）的请求，必须先停下来要求用户补齐；不查资料、不编造数据/引用/人名。
+description: 在 `~/NeuralVault/drafts/` 下生成一篇公众号/博客文章的粗稿（first draft），必须基于用户给出的 thesis（核心观点）与 bones（论证骨架 3-5 条），严格按 `cat-write/_assets/voice-profile-blog.md` 的声音规范输出 800-1500 字的 Markdown 草稿。当用户说"帮我写一篇公众号草稿 / 起一稿博客 / draft 一篇 / 出个第一稿 / 帮我写个初稿"等意图时使用。**只产出粗稿，不修改既有文章、不做段落分诊、不做发布检查、不做声音迁移**；不接受没有 thesis 或 bones（少于 3 条）的请求，必须先停下来要求用户补齐；不查资料、不编造数据/引用/人名。
 ---
 
 # draft-blog-post
 
-为用户在 `cat-write/drafts/` 下生成一篇公众号/博客文章的粗稿（v1）。
+为用户在 `~/NeuralVault/drafts/` 下生成一篇公众号/博客文章的粗稿（v1）。
 
 ## 定位
 
@@ -87,7 +87,7 @@ notes:      <可选，特别要避免/包含什么>
 - [ ] 5. 生成正文（每段按其模式标签调用对应规则）
 - [ ] 6. 套用开篇 + 「写在最后」收束
 - [ ] 7. 跑 voice 自检清单（按整篇模式选用 A / B 分组）+ 本 skill 自检
-- [ ] 8. 写入 cat-write/drafts/<YYYY-MM-DD>-<slug>.md
+- [ ] 8. 写入 ~/NeuralVault/drafts/<YYYY-MM-DD>-<slug>.md
 - [ ] 9. 简短回复用户：路径 + 字数 + 模式判定 + 自检结果 + 下一步建议
 ```
 
@@ -140,7 +140,7 @@ notes:      <可选，特别要避免/包含什么>
 ### 文件路径
 
 ```
-cat-write/drafts/<YYYY-MM-DD>-<slug>.md
+~/NeuralVault/drafts/<YYYY-MM-DD>-<slug>.md
 ```
 
 - `<YYYY-MM-DD>` = 当天真实日期
@@ -191,7 +191,7 @@ word_count: <实际字数>
 ## 输出后给用户的回复模板
 
 ```
-草稿已生成：cat-write/drafts/<...>.md
+草稿已生成：~/NeuralVault/drafts/<...>.md
 字数：<N>
 模式判定：<A / B / mixed (主 A，B 段：第 X、Y 段)>
 voice 自检：通过 / 失败项 [...]
@@ -224,7 +224,7 @@ bones 覆盖：<M>/<总数> 全部覆盖
 
 执行后产物应满足：
 
-- 文件存在于 `cat-write/drafts/` 下，命名符合 `<YYYY-MM-DD>-<slug>.md`
+- 文件存在于 `~/NeuralVault/drafts/` 下，命名符合 `<YYYY-MM-DD>-<slug>.md`
 - 字数在 800-1500
 - frontmatter 完整（title / thesis / status / created / voice / word_count）
 - 每条 bone 在正文都能找到对应段落
