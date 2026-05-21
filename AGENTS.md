@@ -118,7 +118,7 @@
 
 ## 6. 当前仓库状态
 
-> 最后更新：2026-05-19
+> 最后更新：2026-05-21
 
 ### 已建立的基础
 
@@ -129,6 +129,7 @@
 | meta-skill | `cat-skill/cat-overlap-skills/SKILL.md` | L3 | 用户独立造 |
 | 业务 skill | `cat-write/daily-log/SKILL.md` | L3 | 用户独立造 |
 | **业务 skill** | `cat-write/draft-blog-post/SKILL.md` | L3 | **本会话造，已跑通** |
+| **业务 skill** | `cat-write/paper-zh-explainer/SKILL.md` | L3 | **本会话造，用于英文论文中文解读** |
 | **资产** | `cat-write/_assets/voice-profile-blog.md` | — | **本会话造，已迭代 2 轮** |
 | **首篇产出** | `cat-write/drafts/2026-05-19-skill-开窍记.md` | — | **已发布（2026-05-19，用户选"不点提醒"半藏模式，体感"很开心 ×3"）** |
 | 用户写作样本 | `cat-write/_assets/1.md` / `2.md` / `3.md` | — | 用于 voice profile 提取 |
@@ -159,7 +160,7 @@
 
 ## 7. 下一步行动
 
-> 最后更新：2026-05-19
+> 最后更新：2026-05-21
 
 ### 近况（已发生）
 
@@ -167,6 +168,7 @@
 - 用户反馈：体感"很开心 ×3"（重复 3 次），核心情感是"把观点送出去了"
 - **关键行为线索**：主动选择"不点提醒所有人"——揭示了真正阻力是"被关注"非"写不好"
 - 已据此更新第 2 节用户画像两条新认知（发布阻力 / 写作动机）
+- 已创建 `cat-write/paper-zh-explainer/SKILL.md`，约定英文论文 PDF 解读文章结构：开头即梦配图 prompt、标题、白话用途、论文身份卡、极简原理、按逻辑块正文解读、必要图表占位 `【figure X】` / `【table X】`。输入只认论文 PDF 地址/路径，输出固定写入 `~/NeuralVault/paper-zh-explainer/`，解读完成后对 `~/NeuralVault` 仓库提交并推送。
 
 ### 接下来该做的（按优先级）
 
