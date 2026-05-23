@@ -1,6 +1,6 @@
 ---
 name: draft-blog-post
-description: 在 `~/NeuralVault/drafts/` 下生成一篇公众号/博客文章的粗稿（first draft），必须基于用户给出的 thesis（核心观点）与 bones（论证骨架 3-5 条），严格按 `cat-write/_assets/voice-profile-blog.md` 的声音规范输出 800-1500 字的 Markdown 草稿。当用户说"帮我写一篇公众号草稿 / 起一稿博客 / draft 一篇 / 出个第一稿 / 帮我写个初稿"等意图时使用。**只产出粗稿，不修改既有文章、不做段落分诊、不做发布检查、不做声音迁移**；不接受没有 thesis 或 bones（少于 3 条）的请求，必须先停下来要求用户补齐；不查资料、不编造数据/引用/人名。
+description: 在 `~/NeuralVault/drafts/` 下生成一篇公众号/博客文章的粗稿（first draft），必须基于用户给出的 thesis（核心观点）与 bones（论证骨架 3-5 条），严格按同目录 `voice-profile-blog.md` 的声音规范输出 800-1500 字的 Markdown 草稿。当用户说"帮我写一篇公众号草稿 / 起一稿博客 / draft 一篇 / 出个第一稿 / 帮我写个初稿"等意图时使用。**只产出粗稿，不修改既有文章、不做段落分诊、不做发布检查、不做声音迁移**；不接受没有 thesis 或 bones（少于 3 条）的请求，必须先停下来要求用户补齐；不查资料、不编造数据/引用/人名。
 ---
 
 # draft-blog-post
@@ -71,7 +71,7 @@ notes:      <可选，特别要避免/包含什么>
 
 每次生成前必须读取并遵守：
 
-- `cat-write/_assets/voice-profile-blog.md`
+- `voice-profile-blog.md`（与本 SKILL.md 同目录）
 
 资产中的句式 DO/DON'T、词汇白/黑名单、修辞偏好、结构模板、自检清单，**全部当作硬约束**。
 

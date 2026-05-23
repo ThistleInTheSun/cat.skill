@@ -1,0 +1,1 @@
+../_assets/voice-profile-blog.md
